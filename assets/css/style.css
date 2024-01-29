@@ -1,0 +1,163 @@
+body{
+    background-color: black;
+}
+
+.apollo{
+    margin-bottom: 50%;
+}
+
+img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-240px, -180px) scale(1.08);
+    opacity: 0.95;
+    transition: 0.6s;
+}
+
+.main_content{
+    background-color: #3498db;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-240px, -180px);
+    opacity: 1;
+    width: 480px;
+    height: 360px;
+    transition: 1s;
+
+    overflow: hidden;
+}
+
+.strong_apollo{
+    color: whitesmoke;
+    width: 250px;
+    height: 38px;
+    font-size: 25px;
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+
+.hidden{
+    opacity: 0;
+    transition: 1s;
+}
+
+.hidden_msg{
+    width: 106px;
+    height: 83px;
+    font-size: 14px;
+    text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right: 60px;
+    color: whitesmoke;
+    transition: 1s;
+}
+
+.hidden_box{
+    width: 5px;
+    height: 63px;
+    background-color: white;
+    position: absolute;
+    right: 44px;
+    bottom: 44px;
+}
+
+.main_content:hover .hidden{
+    opacity: 1;
+}
+
+.main_content:hover img{
+    opacity: 0.6;
+    transform: scale(1) translate(-240px, -180px);
+}
+
+.main_content::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(255,255,255,0.5);
+    transform: scale(1.9, 1.4) rotate3d(0, 0, 1, 45deg) translate(0, -100%);
+    transition: 0.7s;
+}
+
+.main_content:hover::before{
+    transform: scale(1.9, 1.4) rotate3d(0, 0, 1, 45deg) translate(0, 100%);
+}
+
+.square{
+    border: solid 1px white;
+    position: relative;
+    left: 48%;
+    width: 30px;
+    height: 30px;
+    animation: outer-spin 6s infinite ease-in-out;
+}
+
+.square_inner{
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    animation: inner-spin 6s infinite ease-in-out;
+}
+
+.square_inner:hover{
+    background-color: transparent;
+    animation: none;
+}
+ 
+@keyframes outer-spin {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    25%{
+        transform: rotate(-180deg);
+    }
+
+    50%{
+        transform: rotate(0deg);
+    }
+    
+    75%{
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes inner-spin {
+    0%{
+        background-color: transparent;
+        height: 0%;
+    }
+
+    25%{
+        background-color: rgb(255, 25, 25);
+        height: 100%;
+    }
+
+    50%{
+        background-color: transparent;
+        height: 0%;
+    }
+
+    75%{
+        background-color: rgb(19, 206, 19);
+        height: 100%;
+    }
+
+    100% {
+        background-color: transparent;
+        height: 0%;
+    }
+}
